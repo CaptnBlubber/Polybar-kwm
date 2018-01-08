@@ -3,6 +3,8 @@
 
 Polybar-kwm is an [Übersicht](https://github.com/felixhageloh/uebersicht) widget that tries to recreate the same behavior as [polybar](https://github.com/jaagr/polybar) on macOS for [kwm](https://github.com/koekeishiya/kwm)
 
+## Screenshots
+![Polybar-kwm](https://i.imgur.com/CQd6ILB.png)
 
 ## Modules
 
@@ -62,6 +64,3 @@ After reboot all Spaces will be shown as *[no tag]*. This is due to how kwm curr
 
 If you find a bug or have any questions about Polybar-kwm,  [submit an issue](https://github.com/CaptnBlubber/Polybar-kwm/issues/new).
 
-
-## Screenshots
-![Polybar-kwm](https://i.imgur.com/CQd6ILB.png)

@@ -34,12 +34,18 @@ brew cask install font-sourcecodepro-nerd-font
 ```
 
 ## Configuration
+The Bar will display where the macOS default menu bar is located. Therefore you have to configure the bar to hide itself:
+System Preferences -> General -> Automatically hide and show the menu bar
 
 Make sure your namespaces are named in kwm. Example:
 ``` 
 kwmc config space 0 1 name " Web"
 kwmc config space 0 2 name " Chat"
 kwmc config space 0 3 name " Code"
+```
+Additionally I recommend to set a top spacing in kwm. My configuration:
+```
+kwmc config padding 32 8 8 8
 ```
 
 ## TODO
@@ -54,7 +60,7 @@ After reboot all Spaces will be shown as *[no tag]*. This is due to how kwm curr
 
 ## Questions?
 
-If you find a bug or have any questions about Polybar Kwm,  [submit an issue](https://github.com/CaptnBlubber/Polybar-kwm/issues/new).
+If you find a bug or have any questions about Polybar-kwm,  [submit an issue](https://github.com/CaptnBlubber/Polybar-kwm/issues/new).
 
 
 ## Screenshots

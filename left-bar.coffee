@@ -20,7 +20,7 @@ refreshFrequency: 100
 
 render: () ->
   """
-  <link rel="stylesheet" href="./assets/font-awesome/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="./polybar/assets/font-awesome/css/font-awesome.min.css" />
 
   <div class="spaces">
   </div>

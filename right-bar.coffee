@@ -33,7 +33,7 @@ refreshFrequency: 1000
 
 render: () ->
   """
-  <link rel="stylesheet" href="./assets/font-awesome/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="./polybar/assets/font-awesome/css/font-awesome.min.css" />
 
   <div class="volume">
     <span class="volume-icon"></span>

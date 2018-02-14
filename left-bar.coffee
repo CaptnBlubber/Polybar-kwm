@@ -16,15 +16,15 @@ command: "echo " +
           "$(#{commands.active}):::" +
           "$(#{commands.list}):::" 
 
-refreshFrequency: 100
+refreshFrequency: 1000
 
 render: () ->
   """
   <link rel="stylesheet" href="./polybar/assets/font-awesome/css/font-awesome.min.css" />
 
-  <div class="spaces">
-  </div>
-  
+  <ul class="spaces">
+    <li>1: Default</li>
+  </ul>
   """
 
 update: (output) ->
@@ -40,11 +40,12 @@ handleSpaces: (list) ->
   $(".spaces").empty()
   list = list.split(/\d, /g)
   $.each(list, (index, value) -> 
-      if (index > 0)
-          $("<div>").prop("id", index).addClass("workspace").text("#{index}: #{value}").appendTo(".spaces"))
-
+    if (index > 0)
+      $("<li>").prop("id", index).text("#{index}: #{value}").appendTo(".spaces")
+  )
+ 
 handleActiveSpace: (id) ->
-  $("##{id}").addClass("active").removeClass("workspace")
+  $("##{id}").addClass("active")
 
 style: """
   .active
@@ -60,9 +61,21 @@ style: """
     background: #{colors.elegant}
     border: 1px solid #{colors.elegant}
 
-  .spaces div
+  .spaces
     padding-right: 8px
     padding-left: 8px
+
+  ul
+    list-style: none
+    margin: 0 0 0 8px
+    padding: 0
+  
+  li
+    display: inline
+    padding: 2px 8px
+    color: #{colors.orange}
+    background: #{colors.elegant}
+    border: 1px solid #{colors.elegant}
 
   top: 0px
   left: 0px

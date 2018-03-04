@@ -1,7 +1,5 @@
 commands =
-  active : "/usr/local/bin/kwmc query space active id"
-  list   : "/usr/local/bin/kwmc query space list"
-  monitor: ""
+  active : "/usr/local/bin/chunkc tiling::query --desktop id"
 
 colors =
   acqua:   "#00d787"
@@ -12,39 +10,31 @@ colors =
   magenta: "#af005f"
   cyan:    "#00afd7"
 
-command: "echo " +
-          "$(#{commands.active}):::" +
-          "$(#{commands.list}):::" 
+spaces = [" Private", " Web", " Chat", " Code", " Musik", " Terminal", " Mail"]
+
+command: "echo $(#{commands.active})"
 
 refreshFrequency: 1000
 
 render: () ->
   """
   <link rel="stylesheet" href="./polybar/assets/font-awesome/css/font-awesome.min.css" />
-
+    <li id="1">1:  Private</li>
+    <li id="2">2:  Web</li>
+    <li id="3">3:  Chat</li>
+    <li id="4">4:  Code</li>
+    <li id="5">5:  Musik</li>
+    <li id="6">6:  Terminal</li>
+    <li id="7">7:  Mail</li>
   <ul class="spaces">
-    <li>1: Default</li>
   </ul>
   """
 
 update: (output) ->
-  output = output.split( /:::/g )
+  @handleActiveSpace(Number (output))
 
-  active = output[0]
-  list   = output[1]
-
-  @handleSpaces(list)
-  @handleActiveSpace(Number (active))
-
-handleSpaces: (list) ->
-  $(".spaces").empty()
-  list = list.split(/\d, /g)
-  $.each(list, (index, value) -> 
-    if (index > 0)
-      $("<li>").prop("id", index).text("#{index}: #{value}").appendTo(".spaces")
-  )
- 
 handleActiveSpace: (id) ->
+  $(".active").removeClass("active")
   $("##{id}").addClass("active")
 
 style: """
@@ -82,5 +72,5 @@ style: """
   font-family: 'SauceCodePro Nerd Font' 
   font-size: 14px
   font-smoothing: antialiasing
-  z-index: 0
+  z-index: 1
 """

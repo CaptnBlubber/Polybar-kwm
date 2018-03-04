@@ -75,8 +75,6 @@ render: () ->
   """
 
 update: (output) ->
-
-  console.log(output)
   output = output.split( /:::/g )
 
   battery  = output[0]
@@ -152,5 +150,5 @@ style: """
   font-family: 'SauceCodePro Nerd Font' 
   font-size: 14px
   font-smoothing: antialiasing
-  z-index: 0
+  z-index: 1
 """

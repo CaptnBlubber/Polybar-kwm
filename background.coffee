@@ -9,5 +9,5 @@ style: """
     height: 24px
     background-color: #1C2331
     //opacity: 0.125
-    z-index: -1
+    z-index: 0
 """
